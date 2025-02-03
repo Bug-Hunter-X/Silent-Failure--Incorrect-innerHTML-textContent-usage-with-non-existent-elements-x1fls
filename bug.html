@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Incorrectly using innerHTML to set content of non-existent element
+    document.getElementById('nonExistentElement').innerHTML = "This text will not be visible";
+    //Another error - trying to add content to a non-existent element that does not exist in the DOM.
+    document.getElementById("anotherNonExistent").textContent = "This will cause an error";
+  </script>
+</body>
+</html>
