@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Check if the element exists before manipulating it
+    const myDiv = document.getElementById('myDiv');
+    if (myDiv) {
+      myDiv.innerHTML = "Text changed successfully!";
+    } else {
+      console.error('Element with id "myDiv" not found.');
+    }
+
+    // Check for the second element
+    const anotherDiv = document.getElementById("anotherNonExistent");
+    if(anotherDiv){
+        anotherDiv.textContent = "This text would only be visible if the element exists";
+    } else {
+        console.error("Element with id 'anotherNonExistent' not found.");
+    }
+  </script>
+</body>
+</html>
